@@ -25,10 +25,10 @@ sub request_param {
 
 my $req = { name => 'Stevan' };
 
-my $upper = request_param($req, 'name') # get value from hash
-    ->map   (sub { $_[0] =~ s/\s$//r }) # trim any trailing whitespace
-    ->filter(sub { length $_[0] != 0 }) # ignore if length == 0
-    ->map   (sub { uc $_[0]          }) # uppercase it
+my $upper = request_param($req, 'name') #/ get value from hash
+    ->map   (sub { $_[0] =~ s/\s$//r }) #/ trim any trailing whitespace
+    ->filter(sub { length $_[0] != 0 }) #/ ignore if length == 0
+    ->map   (sub { uc $_[0]          }) #/ uppercase it
 ;
 
 is($upper->get_or_else(''), 'STEVAN', '... got the result we expected');

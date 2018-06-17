@@ -137,7 +137,7 @@ __END__
   match $option {
    case None    => None
    case Some(x) => $f->( x ) == true ? Some(x) : None
-  }  
+  }
 
 =item C<foreach( $f )>
 
